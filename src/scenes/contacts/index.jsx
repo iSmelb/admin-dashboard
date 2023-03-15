@@ -96,6 +96,30 @@ const Contacts = () => {
           rows={mockDataContacts}
           columns={columns}
           components={{ Toolbar: GridToolbar}}
+          componentsProps={{
+            panel: {
+              sx: {
+                "& .MuiPaper-root": {
+                  background: colors.primary[400],
+                },
+                "& .MuiSwitch-switchBase": {
+                  color: `${colors.greenAccent[200]} !important`
+                },
+                "& .MuiSwitch-switchBase+.MuiSwitch-track": {
+                  backgroundColor: colors.greenAccent[100]
+                },
+                "& .MuiSwitch-switchBase.Mui-checked+.MuiSwitch-track": {
+                  backgroundColor: colors.greenAccent[500]
+                },
+                "& .MuiFormLabel-root": {
+                  color: `${colors.grey[100]} !important`
+                },
+                "& .MuiDataGrid-panelFooter .MuiButtonBase-root": {
+                  color: `${colors.grey[100]} !important`
+                },
+              }
+            },
+          }}
         />
       </Box>
     </Box>
