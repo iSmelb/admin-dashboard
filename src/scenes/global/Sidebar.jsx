@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Sidebar, Menu, MenuItem, useProSidebar } from 'react-pro-sidebar'
 import { Box, IconButton, Typography, useTheme } from "@mui/material";
-import { Link } from "react-router-dom";
+import { Link, useLocation, } from "react-router-dom";
 import { tokens } from "../../theme";
 
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
@@ -20,8 +20,8 @@ import MapOutlinedIcon from "@mui/icons-material/MapOutlined";
 const Item = ({ title, to, icon, selected, setSelected}) => {
   return (
     <MenuItem 
-      active={selected === title}
-      onClick={() => setSelected(title)}
+      active={selected === to}
+      onClick={() => setSelected(to)}
       icon={icon}
       component={<Link to={to}/>}
     >
@@ -34,9 +34,10 @@ const Item = ({ title, to, icon, selected, setSelected}) => {
 const CustomSidebar = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
-  const [selected, setSelected] = useState("Dashboard");
+  const { pathname } = useLocation();
+  const [selected, setSelected] = useState(pathname);
   const { collapseSidebar, collapsed } = useProSidebar();
-
+  
   return (
     <Box >
       <Sidebar
