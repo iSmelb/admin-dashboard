@@ -6,6 +6,7 @@ import Dashboard from "../scenes/dashboard";
 import FAQ from "../scenes/faq";
 import Form from "../scenes/form";
 import Invoices from "../scenes/invoices";
+import Pie from "../scenes/pie";
 import Team from "../scenes/team";
 
 const AppRoutes = () => {
@@ -19,6 +20,7 @@ const AppRoutes = () => {
       <Route path="/calendar" element={<Calendar/>}/>
       <Route path="/faq" element={<FAQ/>}/>
       <Route path="/bar" element={<Bar/>}/>
+      <Route path="/pie" element={<Pie/>}/>
     </Routes>
   )
 }
