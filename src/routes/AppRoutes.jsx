@@ -5,6 +5,7 @@ import Contacts from "../scenes/contacts";
 import Dashboard from "../scenes/dashboard";
 import FAQ from "../scenes/faq";
 import Form from "../scenes/form";
+import Geography from "../scenes/geography";
 import Invoices from "../scenes/invoices";
 import Line from "../scenes/line";
 import Pie from "../scenes/pie";
@@ -23,6 +24,7 @@ const AppRoutes = () => {
       <Route path="/bar" element={<Bar/>}/>
       <Route path="/pie" element={<Pie/>}/>
       <Route path="/line" element={<Line/>}/>
+      <Route path="/geography" element={<Geography/>}/>
     </Routes>
   )
 }
