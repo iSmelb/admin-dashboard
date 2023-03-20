@@ -6,6 +6,7 @@ import Dashboard from "../scenes/dashboard";
 import FAQ from "../scenes/faq";
 import Form from "../scenes/form";
 import Invoices from "../scenes/invoices";
+import Line from "../scenes/line";
 import Pie from "../scenes/pie";
 import Team from "../scenes/team";
 
@@ -21,6 +22,7 @@ const AppRoutes = () => {
       <Route path="/faq" element={<FAQ/>}/>
       <Route path="/bar" element={<Bar/>}/>
       <Route path="/pie" element={<Pie/>}/>
+      <Route path="/line" element={<Line/>}/>
     </Routes>
   )
 }
