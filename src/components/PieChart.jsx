@@ -9,6 +9,7 @@ const PieChart = () => {
 
   return (
     <ResponsivePie
+      motionConfig="stiff"
       data={data}
       theme={{
         axis: {

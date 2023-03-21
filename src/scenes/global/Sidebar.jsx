@@ -46,6 +46,7 @@ const CustomSidebar = () => {
           height: "100%",
           border: "none",
         }}
+        transitionDuration={150}
       >
         <Menu 
           iconShape="square"

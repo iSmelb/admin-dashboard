@@ -9,6 +9,7 @@ const LineChart = ({isDashboard = false}) => {
 
   return (
     <ResponsiveLine
+      motionConfig="stiff"
       data={data}
       theme={{
         axis: {

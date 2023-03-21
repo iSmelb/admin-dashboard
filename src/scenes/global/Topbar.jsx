@@ -12,10 +12,20 @@ import SearchIcon from "@mui/icons-material/Search";
 const Topbar = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
+  const mode = theme.palette.mode
   const colorMode = useContext(ColorModeContext);
 
   return (
-    <Box display="flex" justifyContent="space-between" p={2 }>
+    <Box 
+      className="topbar"
+      display="flex"
+      justifyContent="space-between" p={2}
+      position="sticky"
+      left="0"
+      top="0"
+      zIndex="10"
+      backgroundColor={mode === 'dark' ? colors.primary[500] : "#fcfcfc"}
+    >
       {/* SEARCH */}
       <Box 
         display="flex"

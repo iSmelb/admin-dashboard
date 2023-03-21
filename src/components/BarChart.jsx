@@ -9,6 +9,7 @@ const BarChart = ({ isDashboard = false }) => {
 
   return (
     <ResponsiveBar
+      motionConfig="stiff"
       data={data}
       theme={{
         axis: {

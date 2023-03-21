@@ -10,6 +10,7 @@ const GeographyChart = ({isDashboard}) => {
 
   return (
     <ResponsiveChoropleth
+      motionConfig="stiff"
       data={data}
       theme={{
         axis: {

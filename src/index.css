@@ -16,7 +16,11 @@ body,
 }
 
 .content {
-  overflow: auto;
+  overflow-x: auto;
+}
+
+.topbar+div {
+  /* overflow: auto; */
 }
 
 ::-webkit-scrollbar {
