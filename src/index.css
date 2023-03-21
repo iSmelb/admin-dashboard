@@ -19,10 +19,6 @@ body,
   overflow-x: auto;
 }
 
-.topbar+div {
-  /* overflow: auto; */
-}
-
 ::-webkit-scrollbar {
   width: 10px;
 }

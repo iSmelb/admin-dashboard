@@ -4,7 +4,6 @@ import { tokens } from "../../theme";
 import { mockTransactions } from "../../data/mockData";
 import { DownloadOutlined, EmailOutlined, PointOfSale, PersonAdd, Traffic } from "@mui/icons-material";
 import LineChart from "../../components/LineChart";
-import PieChart from "../../components/PieChart";
 import BarChart from "../../components/BarChart";
 import GeographyChart from "../../components/GeographyChart";
 import StatBox from "../../components/StatBox";
@@ -144,7 +143,7 @@ const Dashboard = () => {
             <Box>
               <IconButton>
                 <DownloadOutlined
-                  sx={{ fontSize: "26px", color: colors.greenAccent[500]}}
+                  sx={{ fontSize: "26px", color: colors.greenAccent[500], zIndex: 5}}
                 />
               </IconButton>
             </Box>
