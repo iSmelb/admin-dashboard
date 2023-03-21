@@ -12,7 +12,6 @@ import SearchIcon from "@mui/icons-material/Search";
 const Topbar = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
-  const mode = theme.palette.mode
   const colorMode = useContext(ColorModeContext);
 
   return (
@@ -24,7 +23,7 @@ const Topbar = () => {
       left="0"
       top="0"
       zIndex="10"
-      backgroundColor={mode === 'dark' ? colors.primary[500] : "#fcfcfc"}
+      backgroundColor={theme.palette.background.default}
     >
       {/* SEARCH */}
       <Box 
@@ -46,13 +45,13 @@ const Topbar = () => {
             : <DarkModeOutlinedIcon/>
           }
         </IconButton>
-        <IconButton>
+        <IconButton disabled>
           <NotificationsOutlinedIcon/>
         </IconButton>
-        <IconButton>
+        <IconButton disabled>
           <SettingsOutlinedIcon/>
         </IconButton>
-        <IconButton>
+        <IconButton disabled>
           <PersonOutlinedIcon/>
         </IconButton>
       </Box>
