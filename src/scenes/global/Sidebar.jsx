@@ -112,7 +112,7 @@ const CustomSidebar = () => {
                   alt="profile-user"
                   width="100px"
                   height="100px"
-                  src={`../../assets/user.jpeg`}
+                  src={`assets/user.jpeg`}
                   style={{borderRadius: "50%"}}
                 />
               </Box>
