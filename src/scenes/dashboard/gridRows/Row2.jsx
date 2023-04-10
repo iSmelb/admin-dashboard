@@ -1,12 +1,52 @@
 import { Box, IconButton, Typography, useTheme } from "@mui/material";
+import XLSX from 'sheetjs-style';
 import LineChart from "../../../components/LineChart";
 import { tokens } from "../../../theme";
-import { mockTransactions } from "../../../data/mockData";
+import { mockTransactions, mockLineData } from "../../../data/mockData";
 import { DownloadOutlined } from "@mui/icons-material";
+import { s2ab } from "../../../utils/exelConvertor";
 
 const Row2 = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
+
+  const downloadRevenue = () => {
+    if (!mockLineData) return;
+    const wb = XLSX.utils.book_new();
+    wb.Props = {
+      Title: 'Revenue Report',
+      Subject: 'Revenue Report',
+      Author: 'Author',
+      CreatedDate: new Date(),
+    };
+    wb.SheetNames.push('Sheet');
+    
+    const wsData = [
+      [ null ],
+    ];
+
+    for (let i = 0; i < mockLineData.length; i++) {
+      wsData.push([mockLineData[i].id]);
+      mockLineData[i].data.forEach(item => {
+        if (!wsData[0].includes(item.x)) {
+          wsData[0].push(item.x);
+        }
+        wsData[i + 1].push(item.y);
+      })
+    }
+
+    const ws = XLSX.utils.aoa_to_sheet(wsData);
+    wb.Sheets.Sheet = ws;
+    const wbout = XLSX.write(wb, { bookType: 'xlsx', type: 'binary' });
+    const a = new Blob([s2ab(wbout)], { type: 'application/octet-stream' });
+    const fileUrl = URL.createObjectURL(a);
+
+    const hiddenElement = document.createElement('a');
+    hiddenElement.href = fileUrl;
+    hiddenElement.target = '_blank';
+    hiddenElement.download = `Revenue.xlsx`;
+    hiddenElement.click();
+  };
 
   return (
     <>
@@ -36,7 +76,7 @@ const Row2 = () => {
           </Box>
 
           <Box>
-            <IconButton>
+            <IconButton onClick={downloadRevenue}>
               <DownloadOutlined
                 sx={{
                   fontSize: "26px",
