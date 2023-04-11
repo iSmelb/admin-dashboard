@@ -15,6 +15,7 @@ import {
 } from "@mui/material";
 import Header from "../../components/Header";
 import { tokens } from "../../theme";
+import { createNotification } from "../../utils/createNotification";
 
 const Calendar = () => {
   const theme = useTheme();
@@ -35,6 +36,8 @@ const Calendar = () => {
         allDay: selected.allDay
       });
     }
+
+    createNotification(`You created event "${title}"`)
   };
 
   const handleEventClick = (selected) => {
