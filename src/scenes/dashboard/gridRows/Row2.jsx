@@ -5,6 +5,7 @@ import { tokens } from "../../../theme";
 import { mockTransactions, mockLineData } from "../../../data/mockData";
 import { DownloadOutlined } from "@mui/icons-material";
 import { s2ab } from "../../../utils/exelConvertor";
+import { createNotification } from "../../../utils/createNotification";
 
 const Row2 = () => {
   const theme = useTheme();
@@ -46,6 +47,8 @@ const Row2 = () => {
     hiddenElement.target = '_blank';
     hiddenElement.download = `Revenue.xlsx`;
     hiddenElement.click();
+  
+    createNotification('The Revenue Generated report was downloaded');
   };
 
   return (

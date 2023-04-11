@@ -8,6 +8,7 @@ import Row1 from "./gridRows/Row1";
 import Row2 from "./gridRows/Row2";
 import Row3 from "./gridRows/Row3";
 import { s2ab } from "../../utils/exelConvertor";
+import { createNotification } from "../../utils/createNotification";
 
 
 const Dashboard = () => {
@@ -33,6 +34,8 @@ const Dashboard = () => {
     hiddenElement.target = '_blank';
     hiddenElement.download = `Reports.xlsx`;
     hiddenElement.click();
+
+    createNotification('The report was downloaded');
   };
 
   return (

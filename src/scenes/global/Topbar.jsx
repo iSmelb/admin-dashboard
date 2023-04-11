@@ -4,16 +4,17 @@ import { ColorModeContext, tokens } from "../../theme";
 import InputBase from "@mui/material/InputBase";
 import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined"; 
 import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined"; 
-import NotificationsOutlinedIcon from "@mui/icons-material/NotificationsOutlined"; 
+// import NotificationsOutlinedIcon from "@mui/icons-material/NotificationsOutlined"; 
 import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined"; 
 import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined"; 
 import SearchIcon from "@mui/icons-material/Search"; 
+import Notifications from "../../components/Notifications";
 
 const Topbar = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   const colorMode = useContext(ColorModeContext);
-
+  
   return (
     <Box 
       className="topbar"
@@ -45,9 +46,7 @@ const Topbar = () => {
             : <DarkModeOutlinedIcon/>
           }
         </IconButton>
-        <IconButton disabled>
-          <NotificationsOutlinedIcon/>
-        </IconButton>
+        <Notifications/>
         <IconButton disabled>
           <SettingsOutlinedIcon/>
         </IconButton>

@@ -26,10 +26,16 @@ body,
 /* Track */
 ::-webkit-scrollbar-track {
   background: #e0e0e0;
+  border: 3px solid rgba(0, 0, 0, 0);
+  background-clip: padding-box !important;
+  border-radius: 10px;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
+  border: 3px solid rgba(0, 0, 0, 0);
+  background-clip: padding-box !important;
+  border-radius: 10px;
   background: #888;
 }
 
