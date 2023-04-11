@@ -39,7 +39,6 @@ const Notifications = () => {
     document.addEventListener('add-notification', e => {
       setNotifications(prev => [e.detail, ...prev,]);
     })
-    
   },[]);
 
   function activeNotifications() {
@@ -56,8 +55,6 @@ const Notifications = () => {
     copyNotification[index].checked = true;
     setNotifications(copyNotification);
   };
-
-  console.log(notifications)
 
   return (
     <Box position="relative">
